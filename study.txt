@@ -1,0 +1,73 @@
+1..ln -s command to create link file, need the full path, otherwise the link file is created as (broken) status.
+
+2.The path file vi ~/.bash_profile is under root path as hidden file.
+
+3.echo $PATH check path.
+
+4./ represent the root path. ~ represent the personal root path.
+
+5.ps -ef  ps -aux jobs
+
+6.pwd
+
+7.安装Notepad2替代notepad，Notepad2可以识别代码、以不同的颜色进行区分，下载地址：http://www.flos-freeware.ch/notepad2.html
+
+8.Kestrel ： A web server for ASP.NET Core based on libuv.  这个是GitHub上对于Kestrel的定义。
+
+9.http://www.cnblogs.com/i-shanghai/p/Getting_Started_with_ASPNET_Core.html
+
+10. http://www.cnblogs.com/savorboard/p/dotnetcore-docker.html
+
+11. http://www.cnblogs.com/cmt/p/nuget-mirror.html
+
+12. systemctl start docker
+
+13. systemctl status docker
+
+14. rm -rf Debug
+
+15. vim Dockerfile
+
+16. FROM microsoft/dotnet:1.0.0-core
+
+#拷贝项目publish文件夹中的所有文件到 docker容器中的publish文件夹中  
+COPY . /publish
+
+#设置工作目录为 `/publish` 文件夹，即容器启动默认的文件夹
+WORKDIR /publish
+
+#设置Docker容器对外暴露60000端口
+EXPOSE 60000
+
+
+#使用`dotnet HelloWebApp.dll`来运行应用程序
+
+CMD ["dotnet", "HelloWebApp.dll", "--server.urls", "http://*:60000"]
+
+17. docker build -t hellowebapp:1.0 .
+
+18. docker images
+
+19. docker rmi -f 1815c82652c0
+
+20. docker run --name hellowebapp -d -p 60000:60000 hellowebapp:1.0
+
+21. http://blog.csdn.net/qq_31737339/article/details/53543537
+
+22. docker rm -fv 容器id
+
+23. docker rmi -f imageid
+
+24. systemctl list-units
+
+25. systemctl enable docker
+
+26. cp -r
+
+27. docker run -i -t -p 127.0.0.1:8000:9000 monotest:test1 /bin/bash
+
+28. 
+
+
+
+
